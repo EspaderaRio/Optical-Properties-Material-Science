@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optical Properties in Materials Science Engineering</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, #64ffda, #00e676, #1de9b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(100, 255, 218, 0.4);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #b0bec5;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(100, 255, 218, 0.05) 100%);
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #e8eaf6;
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .equation-display {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            color: #64ffda;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            padding: 80px 0;
+        }
+
+        .model-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(100, 255, 218, 0.25);
+            border-color: rgba(100, 255, 218, 0.4);
+        }
+
+        .model-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #64ffda, #00e676, #1de9b6);
+        }
+
+        .model-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #64ffda;
+        }
+
+        .model-description {
+            color: #b0bec5;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .model-3d {
+            width: 100%;
+            height: 250px;
+            margin: 30px 0;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .refraction-demo {
+            width: 200px;
+            height: 150px;
+            position: relative;
+        }
+
+        .light-ray {
+            position: absolute;
+            width: 3px;
+            height: 80px;
+            background: linear-gradient(180deg, #ffeb3b, #ff9800);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .incident-ray {
+            top: 10px;
+            left: 50px;
+            transform: rotate(-30deg);
+            transform-origin: bottom;
+        }
+
+        .refracted-ray {
+            top: 90px;
+            left: 100px;
+            transform: rotate(-15deg);
+            transform-origin: top;
+            background: linear-gradient(180deg, #2196f3, #03a9f4);
+            box-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+        }
+
+        .interface {
+            position: absolute;
+            top: 75px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(100, 255, 218, 0.6);
+        }
+
+        .absorption-demo {
+            width: 180px;
+            height: 120px;
+            position: relative;
+        }
+
+        .photon {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffeb3b, #ff9800);
+            box-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+            animation: photon-travel 3s linear infinite;
+        }
+
+        .photon:nth-child(1) { top: 20px; animation-delay: 0s; }
+        .photon:nth-child(2) { top: 40px; animation-delay: 0.5s; }
+        .photon:nth-child(3) { top: 60px; animation-delay: 1s; }
+        .photon:nth-child(4) { top: 80px; animation-delay: 1.5s; }
+
+        .material-block {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            width: 60px;
+            height: 100px;
+            background: linear-gradient(45deg, rgba(100, 255, 218, 0.3), rgba(63, 81, 181, 0.3));
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            border-radius: 8px;
+        }
+
+        .band-diagram {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            background: linear-gradient(180deg, transparent 0%, rgba(100, 255, 218, 0.1) 50%, rgba(255, 193, 7, 0.1) 100%);
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .energy-level {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(100, 255, 218, 0.8);
+            border-radius: 2px;
+        }
+
+        .valence-band {
+            bottom: 30px;
+            background: rgba(255, 193, 7, 0.8);
+        }
+
+        .conduction-band {
+            top: 30px;
+            background: rgba(100, 255, 218, 0.8);
+        }
+
+        .band-gap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #64ffda;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .electron {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff4444;
+            animation: electron-jump 2s ease-in-out infinite;
+        }
+
+        .fiber-optic {
+            width: 220px;
+            height: 80px;
+            position: relative;
+        }
+
+        .fiber-core {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, rgba(100, 255, 218, 0.3), rgba(100, 255, 218, 0.6));
+            border-radius: 5px;
+            border: 1px solid rgba(100, 255, 218, 0.5);
+        }
+
+        .light-pulse {
+            position: absolute;
+            top: 37px;
+            left: -10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ffeb3b;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
+            animation: pulse-travel 2s linear infinite;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .property-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .property-label {
+            color: #b0bec5;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .property-value {
+            color: #64ffda;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .interactive-btn {
+            background: linear-gradient(45deg, #64ffda, #00e676);
+            color: #0a0a1a;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .interactive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 80px 0 50px;
+            color: #64ffda;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #64ffda, #00e676);
+            border-radius: 2px;
+        }
+
+        .material-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .material-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        .material-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #64ffda;
+            margin-bottom: 15px;
+        }
+
+        @keyframes light-pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; box-shadow: 0 0 20px rgba(255, 235, 59, 1); }
+        }
+
+        @keyframes photon-travel {
+            0% { left: -20px; opacity: 1; }
+            70% { opacity: 1; }
+            80% { left: 140px; opacity: 0.3; }
+            100% { left: 200px; opacity: 0; }
+        }
+
+        @keyframes electron-jump {
+            0%, 100% { bottom: 35px; }
+            50% { bottom: 120px; }
+        }
+
+        @keyframes pulse-travel {
+            0% { left: -10px; }
+            100% { left: 220px; }
+        }
+
+        @keyframes rotate-3d {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.8rem;
+            }
+            
+            .models-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .model-card {
+                padding: 30px 20px;
+            }
+
+            .material-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="tailwindcss.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <h1 class="main-title" id="main-title">Optical Properties in Materials Science Engineering</h1>
+    <p class="subtitle" id="subtitle">Understanding Light-Matter Interactions in Engineering Materials</p>
+   </div>
+  </header>
+  <main>
+   <section class="intro-section">
+    <div class="container">
+     <p class="intro-text" id="intro-text">Optical properties determine how materials interact with electromagnetic radiation, particularly visible light. These properties are fundamental to understanding and designing materials for applications ranging from optical fibers and lasers to solar cells and displays. The behavior of light in materials depends on electronic structure, atomic arrangement, and defects within the crystal lattice.</p>
+     <div class="equation-display"><strong>Snell's Law:</strong> n₁ sin θ₁ = n₂ sin θ₂ <br><br><strong>Beer's Law:</strong> I = I₀ e^(-αx)
+     </div>
+    </div>
+   </section>
+   <section class="container">
+    <h2 class="section-title" id="fundamentals-title">Fundamental Optical Phenomena</h2>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Refraction &amp; Reflection</h3>
+      <p class="model-description">When light encounters an interface between materials with different refractive indices, it bends according to Snell's law. The refractive index depends on the material's electronic polarizability.</p>
+      <div class="model-3d">
+       <div class="refraction-demo">
+        <div class="light-ray incident-ray"></div>
+        <div class="interface"></div>
+        <div class="light-ray refracted-ray"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Glass (n)
+        </div>
+        <div class="property-value">
+         1.52
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Diamond (n)
+        </div>
+        <div class="property-value">
+         2.42
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Silicon (n)
+        </div>
+        <div class="property-value">
+         3.42
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateRefraction(this)">Demonstrate Refraction</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Absorption &amp; Transmission</h3>
+      <p class="model-description">Materials absorb photons when their energy matches electronic transitions. The absorption coefficient determines how quickly light intensity decreases as it travels through the material.</p>
+      <div class="model-3d">
+       <div class="absorption-demo">
+        <div class="photon"></div>
+        <div class="photon"></div>
+        <div class="photon"></div>
+        <div class="photon"></div>
+        <div class="material-block"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Absorption Coeff.
+        </div>
+        <div class="property-value">
+         α (cm⁻¹)
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Transmittance
+        </div>
+        <div class="property-value">
+         T = I/I₀
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Optical Density
+        </div>
+        <div class="property-value">
+         OD = -log T
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateAbsorption(this)">Show Absorption</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Electronic Band Structure</h3>
+      <p class="model-description">The band gap energy determines which wavelengths of light can be absorbed. Materials are transparent to photons with energy less than the band gap, making this crucial for optical applications.</p>
+      <div class="model-3d">
+       <div class="band-diagram">
+        <div class="energy-level conduction-band"></div>
+        <div class="band-gap">
+         Eg = hν
+        </div>
+        <div class="energy-level valence-band"></div>
+        <div class="electron"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Si Band Gap
+        </div>
+        <div class="property-value">
+         1.12 eV
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         GaAs Band Gap
+        </div>
+        <div class="property-value">
+         1.42 eV
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Diamond Band Gap
+        </div>
+        <div class="property-value">
+         5.5 eV
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateBandGap(this)">Electronic Transitions</button>
+     </div>
+    </div>
+    <h2 class="section-title" id="phenomena-title">Advanced Optical Phenomena</h2>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Optical Fibers &amp; Waveguides</h3>
+      <p class="model-description">Total internal reflection confines light within optical fibers when the core has a higher refractive index than the cladding. This enables long-distance optical communication with minimal loss.</p>
+      <div class="model-3d">
+       <div class="fiber-optic">
+        <div class="fiber-core"></div>
+        <div class="light-pulse"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Core Index
+        </div>
+        <div class="property-value">
+         1.468
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Cladding Index
+        </div>
+        <div class="property-value">
+         1.462
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Critical Angle
+        </div>
+        <div class="property-value">
+         83.4°
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateFiber(this)">Light Propagation</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Luminescence &amp; Phosphorescence</h3>
+      <p class="model-description">Materials can emit light through various mechanisms including fluorescence, phosphorescence, and electroluminescence. These processes involve electronic transitions from excited states back to ground states.</p>
+      <div class="model-3d">
+       <div class="band-diagram">
+        <div class="energy-level conduction-band"></div>
+        <div class="band-gap">
+         hν emission
+        </div>
+        <div class="energy-level valence-band"></div>
+        <div class="electron" style="animation: electron-jump 1.5s ease-in-out infinite;"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Quantum Efficiency
+        </div>
+        <div class="property-value">
+         η = 0.85
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Lifetime
+        </div>
+        <div class="property-value">
+         τ = 10 ns
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Stokes Shift
+        </div>
+        <div class="property-value">
+         Δλ = 50 nm
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateLuminescence(this)">Emission Process</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Photoconductivity</h3>
+      <p class="model-description">Light absorption can generate electron-hole pairs, increasing electrical conductivity. This photoconductivity effect is fundamental to photodetectors, solar cells, and image sensors.</p>
+      <div class="model-3d">
+       <div class="absorption-demo">
+        <div class="photon"></div>
+        <div class="photon"></div>
+        <div class="photon"></div>
+        <div class="material-block" style="background: linear-gradient(45deg, rgba(255, 193, 7, 0.3), rgba(255, 152, 0, 0.3));"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Responsivity
+        </div>
+        <div class="property-value">
+         R (A/W)
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Dark Current
+        </div>
+        <div class="property-value">
+         Id (nA)
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         NEP
+        </div>
+        <div class="property-value">
+         10⁻¹² W
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animatePhotoconductivity(this)">Generate Carriers</button>
+     </div>
+    </div>
+    <h2 class="section-title" id="applications-title">Engineering Applications</h2>
+    <div class="material-examples">
+     <div class="material-card">
+      <div class="material-name">
+       Optical Glass
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Refractive Index
+        </div>
+        <div class="property-value">
+         1.45-1.95
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Abbe Number
+        </div>
+        <div class="property-value">
+         25-65
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Used in lenses, prisms, and optical instruments. Low dispersion glasses minimize chromatic aberration.</p>
+     </div>
+     <div class="material-card">
+      <div class="material-name">
+       Semiconductor Lasers
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         GaAs Wavelength
+        </div>
+        <div class="property-value">
+         870 nm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         InGaAsP
+        </div>
+        <div class="property-value">
+         1550 nm
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Direct band gap semiconductors enable efficient light emission for telecommunications and data storage.</p>
+     </div>
+     <div class="material-card">
+      <div class="material-name">
+       Photovoltaic Materials
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Si Efficiency
+        </div>
+        <div class="property-value">
+         26.7%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         GaAs Efficiency
+        </div>
+        <div class="property-value">
+         47.1%
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Band gap engineering optimizes solar spectrum absorption for maximum energy conversion efficiency.</p>
+     </div>
+     <div class="material-card">
+      <div class="material-name">
+       Optical Ceramics
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Al₂O₃ Transmission
+        </div>
+        <div class="property-value">
+         85%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         YAG:Nd³⁺
+        </div>
+        <div class="property-value">
+         1064 nm
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Transparent ceramics combine optical clarity with mechanical strength for harsh environments.</p>
+     </div>
+     <div class="material-card">
+      <div class="material-name">
+       Liquid Crystals
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Birefringence
+        </div>
+        <div class="property-value">
+         Δn = 0.2
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Response Time
+        </div>
+        <div class="property-value">
+         1-10 ms
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Electrically controlled birefringence enables displays and optical modulators.</p>
+     </div>
+     <div class="material-card">
+      <div class="material-name">
+       Metamaterials
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Negative Index
+        </div>
+        <div class="property-value">
+         n = -1.5
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Operating Freq.
+        </div>
+        <div class="property-value">
+         THz-Optical
+        </div>
+       </div>
+      </div>
+      <p style="color: #b0bec5; margin-top: 15px; font-size: 0.9rem;">Engineered structures with properties not found in nature, enabling cloaking and super-resolution.</p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            main_title: "Optical Properties in Materials Science Engineering",
+            subtitle: "Understanding Light-Matter Interactions in Engineering Materials",
+            intro_text: "Optical properties determine how materials interact with electromagnetic radiation, particularly visible light. These properties are fundamental to understanding and designing materials for applications ranging from optical fibers and lasers to solar cells and displays. The behavior of light in materials depends on electronic structure, atomic arrangement, and defects within the crystal lattice.",
+            fundamentals_title: "Fundamental Optical Phenomena",
+            phenomena_title: "Advanced Optical Phenomena",
+            applications_title: "Engineering Applications",
+            background_color: "#0a0a1a",
+            surface_color: "#1a1a2e",
+            text_color: "#ffffff",
+            accent_color: "#64ffda",
+            secondary_color: "#00e676",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        // Animation functions
+        function animateRefraction(button) {
+            const card = button.closest('.model-card');
+            const rays = card.querySelectorAll('.light-ray');
+            
+            button.textContent = 'Demonstrating...';
+            button.disabled = true;
+            
+            rays.forEach(ray => {
+                ray.style.animation = 'none';
+                setTimeout(() => {
+                    ray.style.animation = 'light-pulse 1s ease-in-out infinite';
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Refraction Complete';
+                setTimeout(() => {
+                    button.textContent = 'Demonstrate Refraction';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateAbsorption(button) {
+            const card = button.closest('.model-card');
+            const photons = card.querySelectorAll('.photon');
+            
+            button.textContent = 'Absorbing Photons...';
+            button.disabled = true;
+            
+            photons.forEach((photon, index) => {
+                photon.style.animation = 'none';
+                setTimeout(() => {
+                    photon.style.animation = `photon-travel 2s linear infinite`;
+                    photon.style.animationDelay = `${index * 0.3}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Absorption Complete';
+                setTimeout(() => {
+                    button.textContent = 'Show Absorption';
+                    button.disabled = false;
+                }, 1500);
+            }, 4000);
+        }
+
+        function animateBandGap(button) {
+            const card = button.closest('.model-card');
+            const electron = card.querySelector('.electron');
+            
+            button.textContent = 'Exciting Electrons...';
+            button.disabled = true;
+            
+            electron.style.animation = 'none';
+            setTimeout(() => {
+                electron.style.animation = 'electron-jump 1s ease-in-out infinite';
+            }, 100);
+            
+            setTimeout(() => {
+                button.textContent = 'Transition Complete';
+                setTimeout(() => {
+                    button.textContent = 'Electronic Transitions';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateFiber(button) {
+            const card = button.closest('.model-card');
+            const pulse = card.querySelector('.light-pulse');
+            
+            button.textContent = 'Propagating Light...';
+            button.disabled = true;
+            
+            pulse.style.animation = 'none';
+            setTimeout(() => {
+                pulse.style.animation = 'pulse-travel 1.5s linear infinite';
+            }, 100);
+            
+            setTimeout(() => {
+                button.textContent = 'Propagation Complete';
+                setTimeout(() => {
+                    button.textContent = 'Light Propagation';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateLuminescence(button) {
+            const card = button.closest('.model-card');
+            const electron = card.querySelector('.electron');
+            
+            button.textContent = 'Emitting Light...';
+            button.disabled = true;
+            
+            electron.style.animation = 'none';
+            setTimeout(() => {
+                electron.style.animation = 'electron-jump 0.8s ease-in-out infinite';
+            }, 100);
+            
+            setTimeout(() => {
+                button.textContent = 'Emission Complete';
+                setTimeout(() => {
+                    button.textContent = 'Emission Process';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animatePhotoconductivity(button) {
+            const card = button.closest('.model-card');
+            const photons = card.querySelectorAll('.photon');
+            
+            button.textContent = 'Generating Carriers...';
+            button.disabled = true;
+            
+            photons.forEach((photon, index) => {
+                photon.style.animation = 'none';
+                setTimeout(() => {
+                    photon.style.animation = `photon-travel 2.5s linear infinite`;
+                    photon.style.animationDelay = `${index * 0.4}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Carriers Generated';
+                setTimeout(() => {
+                    button.textContent = 'Generate Carriers';
+                    button.disabled = false;
+                }, 1500);
+            }, 4000);
+        }
+
+        // Element SDK implementation
+        async function onConfigChange(config) {
+            const mainTitle = document.getElementById('main-title');
+            const subtitle = document.getElementById('subtitle');
+            const introText = document.getElementById('intro-text');
+            const fundamentalsTitle = document.getElementById('fundamentals-title');
+            const phenomenaTitle = document.getElementById('phenomena-title');
+            const applicationsTitle = document.getElementById('applications-title');
+
+            if (mainTitle) mainTitle.textContent = config.main_title || defaultConfig.main_title;
+            if (subtitle) subtitle.textContent = config.subtitle || defaultConfig.subtitle;
+            if (introText) introText.textContent = config.intro_text || defaultConfig.intro_text;
+            if (fundamentalsTitle) fundamentalsTitle.textContent = config.fundamentals_title || defaultConfig.fundamentals_title;
+            if (phenomenaTitle) phenomenaTitle.textContent = config.phenomena_title || defaultConfig.phenomena_title;
+            if (applicationsTitle) applicationsTitle.textContent = config.applications_title || defaultConfig.applications_title;
+
+            // Apply colors
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+
+            document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${surfaceColor} 50%, #16213e 100%)`;
+            document.body.style.color = textColor;
+
+            // Apply font
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = '-apple-system, BlinkMacSystemFont, sans-serif';
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+            // Apply font size
+            const baseSize = config.font_size || defaultConfig.font_size;
+            if (mainTitle) mainTitle.style.fontSize = `${baseSize * 2.5}px`;
+            if (subtitle) subtitle.style.fontSize = `${baseSize * 1.1}px`;
+            document.body.style.fontSize = `${baseSize}px`;
+
+            // Update accent colors
+            const accentElements = document.querySelectorAll('.main-title, .section-title, .model-title, .property-value, .band-gap');
+            accentElements.forEach(el => {
+                el.style.color = accentColor;
+            });
+
+            // Update button colors
+            const buttons = document.querySelectorAll('.interactive-btn');
+            buttons.forEach(btn => {
+                btn.style.background = `linear-gradient(45deg, ${accentColor}, ${secondaryColor})`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => {
+                            config.secondary_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ secondary_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["main_title", config.main_title || defaultConfig.main_title],
+                ["subtitle", config.subtitle || defaultConfig.subtitle],
+                ["intro_text", config.intro_text || defaultConfig.intro_text],
+                ["fundamentals_title", config.fundamentals_title || defaultConfig.fundamentals_title],
+                ["phenomena_title", config.phenomena_title || defaultConfig.phenomena_title],
+                ["applications_title", config.applications_title || defaultConfig.applications_title]
+            ]);
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ </body>
+</html>
