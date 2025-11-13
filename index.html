@@ -384,6 +384,606 @@
             margin-bottom: 15px;
         }
 
+        .concept-explanation {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 4px solid #64ffda;
+        }
+
+        .concept-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #e8eaf6;
+            margin-bottom: 20px;
+        }
+
+        .subsection-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #00e676;
+            margin: 50px 0 30px;
+            padding-left: 20px;
+            border-left: 3px solid #00e676;
+        }
+
+        /* Electromagnetic Spectrum Styles */
+        .spectrum-demo {
+            width: 200px;
+            height: 100px;
+            position: relative;
+        }
+
+        .spectrum-bar {
+            width: 180px;
+            height: 20px;
+            background: linear-gradient(90deg, #8e24aa, #3f51b5, #2196f3, #4caf50, #ffeb3b, #ff9800, #f44336);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .wavelength-markers {
+            display: flex;
+            justify-content: space-between;
+            width: 180px;
+        }
+
+        .marker {
+            font-size: 0.8rem;
+            color: #b0bec5;
+        }
+
+        .marker.violet { color: #8e24aa; }
+        .marker.blue { color: #2196f3; }
+        .marker.green { color: #4caf50; }
+        .marker.red { color: #f44336; }
+
+        /* Energy Calculator Styles */
+        .energy-calculator {
+            width: 180px;
+            height: 120px;
+            position: relative;
+        }
+
+        .photon-energy {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .energy-bar {
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .high-energy {
+            background: linear-gradient(90deg, #8e24aa, #3f51b5);
+            color: white;
+        }
+
+        .medium-energy {
+            background: linear-gradient(90deg, #2196f3, #4caf50);
+            color: white;
+        }
+
+        .low-energy {
+            background: linear-gradient(90deg, #ff9800, #f44336);
+            color: white;
+        }
+
+        /* Light Interaction Styles */
+        .interaction-demo {
+            width: 200px;
+            height: 120px;
+            position: relative;
+        }
+
+        .incident-light {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffeb3b);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .material-interface {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+            width: 80px;
+            height: 80px;
+            background: rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            border-radius: 10px;
+        }
+
+        .reflected-light {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #ffeb3b, transparent);
+            transform: rotate(-30deg);
+            animation: light-pulse 2s ease-in-out infinite 0.5s;
+        }
+
+        .transmitted-light {
+            position: absolute;
+            right: 0;
+            top: 40px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #2196f3, transparent);
+            animation: light-pulse 2s ease-in-out infinite 1s;
+        }
+
+        .absorbed-light {
+            position: absolute;
+            left: 70px;
+            top: 50px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 152, 0, 0.6), transparent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite 1.5s;
+        }
+
+        /* Polarization Demo Styles */
+        .polarization-demo {
+            width: 150px;
+            height: 100px;
+            position: relative;
+        }
+
+        .atom-model {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 10px auto;
+        }
+
+        .nucleus {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            width: 10px;
+            height: 10px;
+            background: #ff4444;
+            border-radius: 50%;
+        }
+
+        .electron-cloud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border: 2px dashed #64ffda;
+            border-radius: 50%;
+            animation: cloud-oscillation 2s ease-in-out infinite;
+        }
+
+        .electric-field-arrow {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: #ffeb3b;
+        }
+
+        .electric-field-arrow::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #ffeb3b;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        /* Metal Electron Styles */
+        .metal-electrons {
+            width: 180px;
+            height: 120px;
+            position: relative;
+            background: linear-gradient(45deg, rgba(192, 192, 192, 0.2), rgba(169, 169, 169, 0.2));
+            border-radius: 10px;
+            border: 1px solid rgba(192, 192, 192, 0.3);
+        }
+
+        .free-electron {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #64ffda;
+            border-radius: 50%;
+            animation: electron-oscillation 1.5s ease-in-out infinite;
+        }
+
+        .free-electron:nth-child(1) { top: 20px; left: 30px; animation-delay: 0s; }
+        .free-electron:nth-child(2) { top: 40px; left: 60px; animation-delay: 0.3s; }
+        .free-electron:nth-child(3) { top: 60px; left: 90px; animation-delay: 0.6s; }
+        .free-electron:nth-child(4) { top: 80px; left: 120px; animation-delay: 0.9s; }
+        .free-electron:nth-child(5) { top: 30px; left: 150px; animation-delay: 1.2s; }
+
+        .electromagnetic-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 235, 59, 0.3), transparent);
+            animation: wave-propagation 2s linear infinite;
+        }
+
+        /* Enhanced Refraction Styles */
+        .normal-line {
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width: 1px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.3);
+            border-left: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .angle-indicator {
+            position: absolute;
+            font-size: 0.8rem;
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        .incident-angle {
+            top: 30px;
+            left: 70px;
+        }
+
+        .refracted-angle {
+            top: 100px;
+            left: 110px;
+        }
+
+        /* Dispersion Demo Styles */
+        .dispersion-demo {
+            width: 200px;
+            height: 120px;
+            position: relative;
+        }
+
+        .white-light {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ffffff);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .prism-shape {
+            position: absolute;
+            left: 60px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid rgba(100, 255, 218, 0.3);
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .dispersed-light {
+            position: absolute;
+            right: 0;
+            width: 80px;
+            height: 2px;
+            animation: light-pulse 2s ease-in-out infinite 1s;
+        }
+
+        .red-light {
+            top: 70px;
+            background: linear-gradient(90deg, #f44336, transparent);
+            transform: rotate(10deg);
+        }
+
+        .green-light {
+            top: 60px;
+            background: linear-gradient(90deg, #4caf50, transparent);
+            transform: rotate(5deg);
+        }
+
+        .blue-light {
+            top: 50px;
+            background: linear-gradient(90deg, #2196f3, transparent);
+            transform: rotate(0deg);
+        }
+
+        /* Transmission Demo Styles */
+        .transmission-demo {
+            width: 200px;
+            height: 100px;
+            position: relative;
+        }
+
+        .incident-beam-trans {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ffeb3b);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .material-slab {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+            width: 40px;
+            height: 60px;
+            background: rgba(100, 255, 218, 0.2);
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            border-radius: 5px;
+        }
+
+        .thickness-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.9rem;
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        .transmitted-beam-trans {
+            position: absolute;
+            right: 0;
+            top: 40px;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #2196f3, transparent);
+            animation: light-pulse 2s ease-in-out infinite 1s;
+        }
+
+        .intensity-scale {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #b0bec5;
+        }
+
+        /* Color Demo Styles */
+        .color-demo {
+            width: 220px;
+            height: 120px;
+            position: relative;
+        }
+
+        .white-light-source {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 50px;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, #ffffff);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .colored-material {
+            position: absolute;
+            left: 60px;
+            top: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 2px solid rgba(244, 67, 54, 0.5);
+        }
+
+        .colored-material.ruby {
+            background: linear-gradient(45deg, rgba(244, 67, 54, 0.3), rgba(136, 14, 79, 0.3));
+        }
+
+        .material-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #f44336;
+            font-weight: 600;
+        }
+
+        .transmitted-color {
+            position: absolute;
+            right: 0;
+            top: 50px;
+            width: 80px;
+            height: 6px;
+            animation: light-pulse 2s ease-in-out infinite 1.5s;
+        }
+
+        .red-transmitted {
+            background: linear-gradient(90deg, #f44336, transparent);
+        }
+
+        .absorbed-wavelengths {
+            position: absolute;
+            top: 0;
+            left: 60px;
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .absorbed {
+            font-size: 0.7rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .blue-abs {
+            background: rgba(33, 150, 243, 0.3);
+            color: #2196f3;
+        }
+
+        .green-abs {
+            background: rgba(76, 175, 80, 0.3);
+            color: #4caf50;
+        }
+
+        /* Scattering Demo Styles */
+        .scattering-demo {
+            width: 200px;
+            height: 120px;
+            position: relative;
+        }
+
+        .incident-light-scatter {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffeb3b);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .polycrystal-structure {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            border-radius: 10px;
+        }
+
+        .grain {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .grain1 {
+            top: 5px;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            background: rgba(100, 255, 218, 0.2);
+            transform: rotate(15deg);
+        }
+
+        .grain2 {
+            top: 5px;
+            right: 5px;
+            width: 35px;
+            height: 25px;
+            background: rgba(63, 81, 181, 0.2);
+            transform: rotate(-10deg);
+        }
+
+        .grain3 {
+            bottom: 5px;
+            left: 10px;
+            width: 50px;
+            height: 30px;
+            background: rgba(255, 193, 7, 0.2);
+            transform: rotate(5deg);
+        }
+
+        .grain-boundary {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 20px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.6);
+            transform: rotate(45deg);
+        }
+
+        .pore {
+            position: absolute;
+            top: 50px;
+            right: 15px;
+            width: 8px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .scattered-light {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .scatter-ray {
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, #ffeb3b, transparent);
+            animation: light-pulse 2s ease-in-out infinite;
+        }
+
+        .ray1 {
+            top: 20px;
+            left: 40px;
+            transform: rotate(-45deg);
+            animation-delay: 0.5s;
+        }
+
+        .ray2 {
+            top: 40px;
+            left: 50px;
+            transform: rotate(30deg);
+            animation-delay: 1s;
+        }
+
+        .ray3 {
+            top: 60px;
+            left: 30px;
+            transform: rotate(-15deg);
+            animation-delay: 1.5s;
+        }
+
+        /* Additional Animation Keyframes */
+        @keyframes cloud-oscillation {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        @keyframes electron-oscillation {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(5px) translateY(-3px); }
+            50% { transform: translateX(0) translateY(0); }
+            75% { transform: translateX(-5px) translateY(3px); }
+        }
+
+        @keyframes wave-propagation {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
         @keyframes light-pulse {
             0%, 100% { opacity: 0.6; }
             50% { opacity: 1; box-shadow: 0 0 20px rgba(255, 235, 59, 1); }
@@ -448,50 +1048,379 @@
      <div class="equation-display"><strong>Snell's Law:</strong> n₁ sin θ₁ = n₂ sin θ₂ <br><br><strong>Beer's Law:</strong> I = I₀ e^(-αx)
      </div>
     </div>
-   </section>
+   </section><!-- Electromagnetic Radiation Section -->
    <section class="container">
-    <h2 class="section-title" id="fundamentals-title">Fundamental Optical Phenomena</h2>
+    <h2 class="section-title" id="fundamentals-title">21.2 Electromagnetic Radiation</h2>
+    <div class="concept-explanation">
+     <p class="concept-text">Electromagnetic radiation consists of electric and magnetic field components that are perpendicular to each other and to the direction of propagation. The energy of electromagnetic radiation is quantized in discrete packets called photons.</p>
+     <div class="equation-display"><strong>Energy-Frequency Relation:</strong> E = hν = hc/λ <br><br><strong>Wave Equation:</strong> c = λν (where c = 3×10⁸ m/s)
+     </div>
+    </div>
     <div class="models-grid">
      <div class="model-card">
-      <h3 class="model-title">Refraction &amp; Reflection</h3>
-      <p class="model-description">When light encounters an interface between materials with different refractive indices, it bends according to Snell's law. The refractive index depends on the material's electronic polarizability.</p>
+      <h3 class="model-title">Electromagnetic Spectrum</h3>
+      <p class="model-description">The electromagnetic spectrum spans from radio waves to gamma rays. Visible light occupies a narrow range from 380-780 nm, with different wavelengths corresponding to different colors perceived by the human eye.</p>
       <div class="model-3d">
-       <div class="refraction-demo">
-        <div class="light-ray incident-ray"></div>
-        <div class="interface"></div>
-        <div class="light-ray refracted-ray"></div>
+       <div class="spectrum-demo">
+        <div class="spectrum-bar"></div>
+        <div class="wavelength-markers"><span class="marker violet">380nm</span> <span class="marker blue">450nm</span> <span class="marker green">550nm</span> <span class="marker red">700nm</span>
+        </div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Glass (n)
+         Visible Range
         </div>
         <div class="property-value">
-         1.52
+         380-780 nm
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Diamond (n)
+         UV Range
         </div>
         <div class="property-value">
-         2.42
+         10-380 nm
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Silicon (n)
+         IR Range
         </div>
         <div class="property-value">
-         3.42
+         780nm-1mm
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateSpectrum(this)">Show Spectrum</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Photon Energy Calculations</h3>
+      <p class="model-description">Photon energy is inversely proportional to wavelength. Higher energy photons (shorter wavelengths) can cause electronic transitions in materials, while lower energy photons may only cause molecular vibrations.</p>
+      <div class="model-3d">
+       <div class="energy-calculator">
+        <div class="photon-energy">
+         <div class="energy-bar high-energy">
+          UV: 3.1-124 eV
+         </div>
+         <div class="energy-bar medium-energy">
+          Visible: 1.6-3.1 eV
+         </div>
+         <div class="energy-bar low-energy">
+          IR: 0.001-1.6 eV
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Blue Light (450nm)
+        </div>
+        <div class="property-value">
+         2.76 eV
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Green Light (550nm)
+        </div>
+        <div class="property-value">
+         2.25 eV
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Red Light (700nm)
+        </div>
+        <div class="property-value">
+         1.77 eV
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animatePhotonEnergy(this)">Calculate Energy</button>
+     </div>
+    </div><!-- Light Interactions with Solids -->
+    <h2 class="section-title">21.3 Light Interactions with Solids</h2>
+    <div class="concept-explanation">
+     <p class="concept-text">When electromagnetic radiation interacts with a solid material, several phenomena can occur: transmission, absorption, reflection, refraction, and scattering. The relative extent of each depends on the material's electronic structure and the photon energy.</p>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Light-Matter Interaction Mechanisms</h3>
+      <p class="model-description">Light can interact with electrons in atoms through various mechanisms: electronic polarization, electronic transitions between energy levels, and free electron oscillations in metals.</p>
+      <div class="model-3d">
+       <div class="interaction-demo">
+        <div class="incident-light"></div>
+        <div class="material-interface">
+         <div class="reflected-light"></div>
+         <div class="transmitted-light"></div>
+         <div class="absorbed-light"></div>
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Reflection (R)
+        </div>
+        <div class="property-value">
+         0-100%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Transmission (T)
+        </div>
+        <div class="property-value">
+         0-100%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Absorption (A)
+        </div>
+        <div class="property-value">
+         R+T+A=1
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateInteraction(this)">Show Interactions</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">21.4 Atomic and Electronic Interactions</h3>
+      <p class="model-description">Electronic polarization occurs when the electron cloud is displaced relative to the nucleus by an applied electric field. This creates an induced dipole moment that affects the material's optical properties.</p>
+      <div class="model-3d">
+       <div class="polarization-demo">
+        <div class="atom-model">
+         <div class="nucleus"></div>
+         <div class="electron-cloud"></div>
+         <div class="electric-field-arrow"></div>
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Polarizability (α)
+        </div>
+        <div class="property-value">
+         10⁻⁴⁰ F·m²
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Dielectric Constant
+        </div>
+        <div class="property-value">
+         εᵣ = n²
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Refractive Index
+        </div>
+        <div class="property-value">
+         n = √εᵣ
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animatePolarization(this)">Electronic Polarization</button>
+     </div>
+    </div><!-- Optical Properties of Metals -->
+    <h2 class="section-title">Optical Properties of Metals</h2>
+    <div class="concept-explanation">
+     <p class="concept-text">Metals have a high density of free electrons that can oscillate in response to electromagnetic fields. This results in high reflectivity and opacity for visible light, giving metals their characteristic lustrous appearance.</p>
+     <div class="equation-display"><strong>Plasma Frequency:</strong> ωₚ = √(Ne²/ε₀m*) <br><br><strong>Skin Depth:</strong> δ = √(2/σμω)
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Free Electron Model</h3>
+      <p class="model-description">In metals, conduction electrons behave as a free electron gas. When light interacts with these electrons, they oscillate and re-radiate electromagnetic waves, leading to high reflectivity.</p>
+      <div class="model-3d">
+       <div class="metal-electrons">
+        <div class="free-electron"></div>
+        <div class="free-electron"></div>
+        <div class="free-electron"></div>
+        <div class="free-electron"></div>
+        <div class="free-electron"></div>
+        <div class="electromagnetic-wave"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Al Reflectivity
+        </div>
+        <div class="property-value">
+         92%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Ag Reflectivity
+        </div>
+        <div class="property-value">
+         95%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Cu Reflectivity
+        </div>
+        <div class="property-value">
+         90%
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateMetalElectrons(this)">Electron Oscillation</button>
+     </div>
+    </div><!-- Optical Properties of Nonmetals -->
+    <h2 class="section-title">Optical Properties of Nonmetals</h2><!-- 21.5 Refraction -->
+    <h3 class="subsection-title">21.5 Refraction</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Refraction occurs when light passes from one medium to another with a different refractive index. The refractive index is related to the speed of light in the material and depends on the electronic polarizability of atoms.</p>
+     <div class="equation-display"><strong>Snell's Law:</strong> n₁ sin θ₁ = n₂ sin θ₂ <br><br><strong>Refractive Index:</strong> n = c/v = √(εᵣμᵣ)
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Refraction Demonstration</h3>
+      <p class="model-description">When light travels from a less dense to a more dense medium, it bends toward the normal. The amount of bending depends on the difference in refractive indices and the angle of incidence.</p>
+      <div class="model-3d">
+       <div class="refraction-demo">
+        <div class="light-ray incident-ray"></div>
+        <div class="interface"></div>
+        <div class="light-ray refracted-ray"></div>
+        <div class="normal-line"></div>
+        <div class="angle-indicator incident-angle">
+         θ₁
+        </div>
+        <div class="angle-indicator refracted-angle">
+         θ₂
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Crown Glass
+        </div>
+        <div class="property-value">
+         n = 1.52
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Flint Glass
+        </div>
+        <div class="property-value">
+         n = 1.62
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Diamond
+        </div>
+        <div class="property-value">
+         n = 2.42
         </div>
        </div>
       </div><button class="interactive-btn" onclick="animateRefraction(this)">Demonstrate Refraction</button>
      </div>
      <div class="model-card">
-      <h3 class="model-title">Absorption &amp; Transmission</h3>
-      <p class="model-description">Materials absorb photons when their energy matches electronic transitions. The absorption coefficient determines how quickly light intensity decreases as it travels through the material.</p>
+      <h3 class="model-title">Dispersion in Materials</h3>
+      <p class="model-description">The refractive index varies with wavelength, causing different colors to refract by different amounts. This dispersion is characterized by the Abbe number and is crucial for lens design.</p>
+      <div class="model-3d">
+       <div class="dispersion-demo">
+        <div class="white-light"></div>
+        <div class="prism-shape"></div>
+        <div class="dispersed-light red-light"></div>
+        <div class="dispersed-light green-light"></div>
+        <div class="dispersed-light blue-light"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Abbe Number
+        </div>
+        <div class="property-value">
+         ν = (n_D-1)/(n_F-n_C)
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Crown Glass ν
+        </div>
+        <div class="property-value">
+         60
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Flint Glass ν
+        </div>
+        <div class="property-value">
+         35
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateDispersion(this)">Show Dispersion</button>
+     </div>
+    </div><!-- 21.6 Reflection -->
+    <h3 class="subsection-title">21.6 Reflection</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Reflection occurs at interfaces between materials with different refractive indices. The reflectance depends on the refractive index difference and the angle of incidence, described by the Fresnel equations.</p>
+     <div class="equation-display"><strong>Normal Incidence Reflectance:</strong> R = [(n₁-n₂)/(n₁+n₂)]² <br><br><strong>Critical Angle:</strong> θc = arcsin(n₂/n₁) for n₁ &gt; n₂
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Fresnel Reflection</h3>
+      <p class="model-description">The Fresnel equations describe how much light is reflected and transmitted at an interface. Reflectance increases with the angle of incidence and reaches 100% beyond the critical angle for total internal reflection.</p>
+      <div class="model-3d">
+       <div class="fresnel-demo">
+        <div class="incident-beam"></div>
+        <div class="reflected-beam"></div>
+        <div class="transmitted-beam"></div>
+        <div class="interface-line"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Air-Glass R
+        </div>
+        <div class="property-value">
+         4%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Glass-Air θc
+        </div>
+        <div class="property-value">
+         41.8°
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Diamond-Air θc
+        </div>
+        <div class="property-value">
+         24.4°
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateReflection(this)">Fresnel Reflection</button>
+     </div>
+    </div><!-- 21.7 Absorption -->
+    <h3 class="subsection-title">21.7 Absorption</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Light absorption occurs when photon energy matches electronic transition energies. The absorption coefficient determines how rapidly light intensity decreases with distance traveled through the material.</p>
+     <div class="equation-display"><strong>Beer's Law:</strong> I = I₀ e^(-αx) <br><br><strong>Absorption Coefficient:</strong> α = 4πk/λ (where k is extinction coefficient)
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Electronic Transitions</h3>
+      <p class="model-description">Absorption occurs when photon energy equals the energy difference between electronic states. In semiconductors, the fundamental absorption edge corresponds to band-to-band transitions.</p>
       <div class="model-3d">
        <div class="absorption-demo">
         <div class="photon"></div>
@@ -499,38 +1428,39 @@
         <div class="photon"></div>
         <div class="photon"></div>
         <div class="material-block"></div>
+        <div class="absorption-curve"></div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Absorption Coeff.
+         Si α (550nm)
         </div>
         <div class="property-value">
-         α (cm⁻¹)
+         10³ cm⁻¹
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Transmittance
+         GaAs α (850nm)
         </div>
         <div class="property-value">
-         T = I/I₀
+         10⁴ cm⁻¹
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Optical Density
+         Glass α (550nm)
         </div>
         <div class="property-value">
-         OD = -log T
+         10⁻³ cm⁻¹
         </div>
        </div>
-      </div><button class="interactive-btn" onclick="animateAbsorption(this)">Show Absorption</button>
+      </div><button class="interactive-btn" onclick="animateAbsorption(this)">Electronic Absorption</button>
      </div>
      <div class="model-card">
-      <h3 class="model-title">Electronic Band Structure</h3>
-      <p class="model-description">The band gap energy determines which wavelengths of light can be absorbed. Materials are transparent to photons with energy less than the band gap, making this crucial for optical applications.</p>
+      <h3 class="model-title">Band Gap and Absorption Edge</h3>
+      <p class="model-description">The absorption edge occurs at photon energies equal to the band gap. Materials are transparent to photons with energy less than the band gap and strongly absorbing above it.</p>
       <div class="model-3d">
        <div class="band-diagram">
         <div class="energy-level conduction-band"></div>
@@ -539,12 +1469,13 @@
         </div>
         <div class="energy-level valence-band"></div>
         <div class="electron"></div>
+        <div class="photon-absorption"></div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Si Band Gap
+         Si Eg
         </div>
         <div class="property-value">
          1.12 eV
@@ -552,7 +1483,7 @@
        </div>
        <div class="property-item">
         <div class="property-label">
-         GaAs Band Gap
+         GaAs Eg
         </div>
         <div class="property-value">
          1.42 eV
@@ -560,73 +1491,206 @@
        </div>
        <div class="property-item">
         <div class="property-label">
-         Diamond Band Gap
+         ZnS Eg
         </div>
         <div class="property-value">
-         5.5 eV
+         3.6 eV
         </div>
        </div>
-      </div><button class="interactive-btn" onclick="animateBandGap(this)">Electronic Transitions</button>
+      </div><button class="interactive-btn" onclick="animateBandGap(this)">Band Gap Transitions</button>
+     </div>
+    </div><!-- 21.8 Transmission -->
+    <h3 class="subsection-title">21.8 Transmission</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Transmission occurs when light passes through a material without being absorbed. The transmittance depends on the material thickness, absorption coefficient, and surface reflections. Materials with low absorption coefficients are transparent.</p>
+     <div class="equation-display"><strong>Transmittance:</strong> T = (1-R)² e^(-αx) / (1-R²e^(-2αx)) <br><br><strong>Optical Density:</strong> OD = -log₁₀(T)
      </div>
     </div>
-    <h2 class="section-title" id="phenomena-title">Advanced Optical Phenomena</h2>
     <div class="models-grid">
      <div class="model-card">
-      <h3 class="model-title">Optical Fibers &amp; Waveguides</h3>
-      <p class="model-description">Total internal reflection confines light within optical fibers when the core has a higher refractive index than the cladding. This enables long-distance optical communication with minimal loss.</p>
+      <h3 class="model-title">Transmission Through Materials</h3>
+      <p class="model-description">Light transmission depends on material thickness and absorption properties. Transparent materials like glass have very low absorption coefficients, allowing high transmission even through thick sections.</p>
       <div class="model-3d">
-       <div class="fiber-optic">
-        <div class="fiber-core"></div>
-        <div class="light-pulse"></div>
+       <div class="transmission-demo">
+        <div class="incident-beam-trans"></div>
+        <div class="material-slab">
+         <div class="thickness-indicator">
+          x
+         </div>
+        </div>
+        <div class="transmitted-beam-trans"></div>
+        <div class="intensity-scale"><span>I₀</span> <span>I = I₀e^(-αx)</span>
+        </div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Core Index
+         Glass T (1mm)
         </div>
         <div class="property-value">
-         1.468
+         92%
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Cladding Index
+         Quartz T (1mm)
         </div>
         <div class="property-value">
-         1.462
+         95%
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Critical Angle
+         Si T (100μm)
         </div>
         <div class="property-value">
-         83.4°
+         0.01%
         </div>
        </div>
-      </div><button class="interactive-btn" onclick="animateFiber(this)">Light Propagation</button>
+      </div><button class="interactive-btn" onclick="animateTransmission(this)">Light Transmission</button>
      </div>
+    </div><!-- 21.9 Color -->
+    <h3 class="subsection-title">21.9 Color</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Color perception results from selective absorption and transmission of different wavelengths. Materials appear colored when they absorb certain wavelengths while transmitting or reflecting others. The perceived color corresponds to the transmitted or reflected wavelengths.</p>
+    </div>
+    <div class="models-grid">
      <div class="model-card">
-      <h3 class="model-title">Luminescence &amp; Phosphorescence</h3>
-      <p class="model-description">Materials can emit light through various mechanisms including fluorescence, phosphorescence, and electroluminescence. These processes involve electronic transitions from excited states back to ground states.</p>
+      <h3 class="model-title">Selective Absorption and Color</h3>
+      <p class="model-description">Materials exhibit color through selective absorption of specific wavelengths. For example, ruby appears red because it absorbs green and blue light while transmitting red wavelengths. The absorption is due to electronic transitions in chromium ions.</p>
       <div class="model-3d">
-       <div class="band-diagram">
-        <div class="energy-level conduction-band"></div>
-        <div class="band-gap">
-         hν emission
+       <div class="color-demo">
+        <div class="white-light-source"></div>
+        <div class="colored-material ruby"><span class="material-label">Ruby (Cr³⁺)</span>
         </div>
-        <div class="energy-level valence-band"></div>
-        <div class="electron" style="animation: electron-jump 1.5s ease-in-out infinite;"></div>
+        <div class="transmitted-color red-transmitted"></div>
+        <div class="absorbed-wavelengths"><span class="absorbed blue-abs">Blue absorbed</span> <span class="absorbed green-abs">Green absorbed</span>
+        </div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Quantum Efficiency
+         Ruby Red λ
         </div>
         <div class="property-value">
-         η = 0.85
+         694 nm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Emerald Green λ
+        </div>
+        <div class="property-value">
+         550 nm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Sapphire Blue λ
+        </div>
+        <div class="property-value">
+         450 nm
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateColor(this)">Color Formation</button>
+     </div>
+    </div><!-- 21.10 Opacity and Translucency -->
+    <h3 class="subsection-title">21.10 Opacity and Translucency in Insulators</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Opacity and translucency in insulators are primarily determined by light scattering rather than absorption. Scattering occurs at grain boundaries, pores, inclusions, and other microstructural features that have different refractive indices.</p>
+     <div class="equation-display"><strong>Rayleigh Scattering:</strong> I ∝ λ⁻⁴ (for particles &lt;&lt; λ) <br><br><strong>Mie Scattering:</strong> Complex function of particle size and λ
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Light Scattering Mechanisms</h3>
+      <p class="model-description">Light scattering in polycrystalline materials occurs at grain boundaries, pores, and second-phase particles. The amount of scattering depends on the size of scattering centers relative to the wavelength and the refractive index differences.</p>
+      <div class="model-3d">
+       <div class="scattering-demo">
+        <div class="incident-light-scatter"></div>
+        <div class="polycrystal-structure">
+         <div class="grain grain1"></div>
+         <div class="grain grain2"></div>
+         <div class="grain grain3"></div>
+         <div class="grain-boundary"></div>
+         <div class="pore"></div>
+        </div>
+        <div class="scattered-light">
+         <div class="scatter-ray ray1"></div>
+         <div class="scatter-ray ray2"></div>
+         <div class="scatter-ray ray3"></div>
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Single Crystal
+        </div>
+        <div class="property-value">
+         Transparent
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Fine Polycrystal
+        </div>
+        <div class="property-value">
+         Translucent
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Porous Material
+        </div>
+        <div class="property-value">
+         Opaque
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateScattering(this)">Light Scattering</button>
+     </div>
+    </div><!-- Applications of Optical Phenomena -->
+    <h2 class="section-title" id="phenomena-title">Applications of Optical Phenomena</h2><!-- 21.11 Luminescence -->
+    <h3 class="subsection-title">21.11 Luminescence</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Luminescence is the emission of light by materials through non-thermal processes. It includes photoluminescence (excitation by photons), electroluminescence (excitation by electric field), and cathodoluminescence (excitation by electrons).</p>
+     <div class="equation-display"><strong>Quantum Efficiency:</strong> η = (photons emitted)/(photons absorbed) <br><br><strong>Stokes Shift:</strong> Δλ = λ_emission - λ_absorption
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Photoluminescence Process</h3>
+      <p class="model-description">In photoluminescence, materials absorb high-energy photons and emit lower-energy photons. The process involves electronic excitation followed by radiative recombination. Phosphors are materials specifically designed for efficient luminescence.</p>
+      <div class="model-3d">
+       <div class="luminescence-demo">
+        <div class="excitation-photon"></div>
+        <div class="luminescent-material">
+         <div class="energy-levels">
+          <div class="excited-state"></div>
+          <div class="ground-state"></div>
+         </div>
+         <div class="electron-transition"></div>
+        </div>
+        <div class="emission-photon"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         ZnS:Cu Efficiency
+        </div>
+        <div class="property-value">
+         85%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Y₂O₃:Eu Efficiency
+        </div>
+        <div class="property-value">
+         95%
         </div>
        </div>
        <div class="property-item">
@@ -634,56 +1698,309 @@
          Lifetime
         </div>
         <div class="property-value">
-         τ = 10 ns
+         1μs-10ms
         </div>
        </div>
-       <div class="property-item">
-        <div class="property-label">
-         Stokes Shift
-        </div>
-        <div class="property-value">
-         Δλ = 50 nm
-        </div>
-       </div>
-      </div><button class="interactive-btn" onclick="animateLuminescence(this)">Emission Process</button>
+      </div><button class="interactive-btn" onclick="animateLuminescence(this)">Photoluminescence</button>
      </div>
      <div class="model-card">
-      <h3 class="model-title">Photoconductivity</h3>
-      <p class="model-description">Light absorption can generate electron-hole pairs, increasing electrical conductivity. This photoconductivity effect is fundamental to photodetectors, solar cells, and image sensors.</p>
+      <h3 class="model-title">Light-Emitting Diodes (LEDs)</h3>
+      <p class="model-description">LEDs are semiconductor devices that emit light through electroluminescence. When electrons and holes recombine across the p-n junction, they release energy as photons. The emission wavelength depends on the semiconductor band gap energy.</p>
       <div class="model-3d">
-       <div class="absorption-demo">
-        <div class="photon"></div>
-        <div class="photon"></div>
-        <div class="photon"></div>
-        <div class="material-block" style="background: linear-gradient(45deg, rgba(255, 193, 7, 0.3), rgba(255, 152, 0, 0.3));"></div>
+       <div class="led-structure">
+        <div class="p-region">
+         p-type
+        </div>
+        <div class="junction">
+         <div class="electron-hole-pair"></div>
+         <div class="photon-emission"></div>
+        </div>
+        <div class="n-region">
+         n-type
+        </div>
+        <div class="current-flow"></div>
        </div>
       </div>
       <div class="properties-grid">
        <div class="property-item">
         <div class="property-label">
-         Responsivity
+         GaAs (Red)
         </div>
         <div class="property-value">
-         R (A/W)
+         870 nm
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         Dark Current
+         GaN (Blue)
         </div>
         <div class="property-value">
-         Id (nA)
+         450 nm
         </div>
        </div>
        <div class="property-item">
         <div class="property-label">
-         NEP
+         InGaN (Green)
         </div>
         <div class="property-value">
-         10⁻¹² W
+         525 nm
         </div>
        </div>
-      </div><button class="interactive-btn" onclick="animatePhotoconductivity(this)">Generate Carriers</button>
+      </div><button class="interactive-btn" onclick="animateLED(this)">LED Operation</button>
+     </div>
+    </div><!-- 21.12 Photoconductivity -->
+    <h3 class="subsection-title">21.12 Photoconductivity</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Photoconductivity is the increase in electrical conductivity due to light absorption. Photons with energy greater than the band gap create electron-hole pairs, increasing the number of charge carriers and thus the conductivity.</p>
+     <div class="equation-display"><strong>Photoconductivity:</strong> Δσ = e(μₑΔn + μₕΔp) <br><br><strong>Responsivity:</strong> R = Δi/P = ηeλ/hc
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Photoconductive Effect</h3>
+      <p class="model-description">In photoconductive materials, light absorption generates electron-hole pairs that increase conductivity. The photocurrent is proportional to the incident light intensity. This effect is used in photodetectors and image sensors.</p>
+      <div class="model-3d">
+       <div class="photoconductor-demo">
+        <div class="semiconductor-block">
+         <div class="electron-carrier"></div>
+         <div class="hole-carrier"></div>
+         <div class="photon-absorption"></div>
+        </div>
+        <div class="electrodes">
+         <div class="electrode positive">
+          +
+         </div>
+         <div class="electrode negative">
+          -
+         </div>
+        </div>
+        <div class="current-meter">
+         I = I₀ + Iₚₕ
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         CdS Responsivity
+        </div>
+        <div class="property-value">
+         0.1 A/W
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Si Responsivity
+        </div>
+        <div class="property-value">
+         0.5 A/W
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Response Time
+        </div>
+        <div class="property-value">
+         μs-ms
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animatePhotoconductivity(this)">Photoconductive Effect</button>
+     </div>
+    </div><!-- 21.13 Lasers -->
+    <h3 class="subsection-title">21.13 Lasers</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Lasers (Light Amplification by Stimulated Emission of Radiation) produce coherent, monochromatic light through stimulated emission. The process requires population inversion, where more atoms are in excited states than ground states.</p>
+     <div class="equation-display"><strong>Einstein Coefficients:</strong> B₁₂ = B₂₁, A₂₁ = (8πhν³/c³)B₂₁ <br><br><strong>Threshold Condition:</strong> Gain = Loss
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Laser Operation Principles</h3>
+      <p class="model-description">Laser operation requires three key components: an active medium with population inversion, a pumping mechanism to create inversion, and an optical cavity to provide feedback. Stimulated emission produces coherent photons.</p>
+      <div class="model-3d">
+       <div class="laser-cavity">
+        <div class="mirror left-mirror">
+         Mirror
+        </div>
+        <div class="active-medium">
+         <div class="excited-atom"></div>
+         <div class="excited-atom"></div>
+         <div class="stimulated-photon"></div>
+         <div class="coherent-beam"></div>
+        </div>
+        <div class="mirror right-mirror">
+         Output
+        </div>
+        <div class="pump-energy"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         He-Ne Wavelength
+        </div>
+        <div class="property-value">
+         632.8 nm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Nd:YAG Wavelength
+        </div>
+        <div class="property-value">
+         1064 nm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Coherence Length
+        </div>
+        <div class="property-value">
+         km
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateLaser(this)">Laser Operation</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Semiconductor Lasers</h3>
+      <p class="model-description">Semiconductor lasers use p-n junctions as the active medium. Population inversion is achieved by forward biasing the junction, injecting electrons and holes that recombine radiatively. The cavity is formed by cleaved crystal faces.</p>
+      <div class="model-3d">
+       <div class="semiconductor-laser">
+        <div class="p-contact">
+         p-contact
+        </div>
+        <div class="active-region">
+         <div class="electron-injection"></div>
+         <div class="hole-injection"></div>
+         <div class="stimulated-emission"></div>
+        </div>
+        <div class="n-contact">
+         n-contact
+        </div>
+        <div class="laser-output"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Threshold Current
+        </div>
+        <div class="property-value">
+         10-100 mA
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Efficiency
+        </div>
+        <div class="property-value">
+         30-50%
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Lifetime
+        </div>
+        <div class="property-value">
+         10⁵ hours
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateSemiconductorLaser(this)">Semiconductor Laser</button>
+     </div>
+    </div><!-- 21.14 Optical Fibers -->
+    <h3 class="subsection-title">21.14 Optical Fibers in Communications</h3>
+    <div class="concept-explanation">
+     <p class="concept-text">Optical fibers guide light through total internal reflection, enabling long-distance communication with minimal loss. The fiber consists of a high-index core surrounded by a lower-index cladding. Light is confined to the core by total internal reflection.</p>
+     <div class="equation-display"><strong>Numerical Aperture:</strong> NA = √(n₁² - n₂²) <br><br><strong>Attenuation:</strong> α = (10/L)log₁₀(P₀/P) dB/km
+     </div>
+    </div>
+    <div class="models-grid">
+     <div class="model-card">
+      <h3 class="model-title">Fiber Optic Waveguiding</h3>
+      <p class="model-description">Light propagates through optical fibers by total internal reflection at the core-cladding interface. The numerical aperture determines the acceptance angle for light entering the fiber. Modern fibers have losses as low as 0.2 dB/km at 1550 nm.</p>
+      <div class="model-3d">
+       <div class="fiber-structure">
+        <div class="fiber-core-detailed"><span class="core-label">Core (n₁)</span>
+        </div>
+        <div class="fiber-cladding"><span class="cladding-label">Cladding (n₂)</span>
+        </div>
+        <div class="light-ray-fiber"></div>
+        <div class="total-internal-reflection"></div>
+        <div class="acceptance-cone"></div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Core Diameter
+        </div>
+        <div class="property-value">
+         8-50 μm
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Attenuation
+        </div>
+        <div class="property-value">
+         0.2 dB/km
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Bandwidth
+        </div>
+        <div class="property-value">
+         THz
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateFiber(this)">Fiber Propagation</button>
+     </div>
+     <div class="model-card">
+      <h3 class="model-title">Fiber Communication Systems</h3>
+      <p class="model-description">Optical communication systems use wavelength division multiplexing (WDM) to transmit multiple channels simultaneously. Erbium-doped fiber amplifiers (EDFAs) provide optical amplification without electrical conversion.</p>
+      <div class="model-3d">
+       <div class="communication-system">
+        <div class="transmitter">
+         <div class="laser-diode"></div>
+         <div class="modulator"></div>
+        </div>
+        <div class="optical-fiber-comm">
+         <div class="wavelength-channels"><span class="channel λ1">λ₁</span> <span class="channel λ2">λ₂</span> <span class="channel λ3">λ₃</span>
+         </div>
+        </div>
+        <div class="receiver">
+         <div class="photodetector"></div>
+         <div class="amplifier"></div>
+        </div>
+       </div>
+      </div>
+      <div class="properties-grid">
+       <div class="property-item">
+        <div class="property-label">
+         Data Rate
+        </div>
+        <div class="property-value">
+         100 Gbps
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Distance
+        </div>
+        <div class="property-value">
+         1000 km
+        </div>
+       </div>
+       <div class="property-item">
+        <div class="property-label">
+         Channels
+        </div>
+        <div class="property-value">
+         80-160
+        </div>
+       </div>
+      </div><button class="interactive-btn" onclick="animateCommunication(this)">Optical Communication</button>
      </div>
     </div>
     <h2 class="section-title" id="applications-title">Engineering Applications</h2>
@@ -854,6 +2171,128 @@
         };
 
         // Animation functions
+        function animateSpectrum(button) {
+            const card = button.closest('.model-card');
+            const spectrumBar = card.querySelector('.spectrum-bar');
+            
+            button.textContent = 'Analyzing Spectrum...';
+            button.disabled = true;
+            
+            spectrumBar.style.animation = 'none';
+            setTimeout(() => {
+                spectrumBar.style.animation = 'pulse 2s ease-in-out infinite';
+            }, 100);
+            
+            setTimeout(() => {
+                button.textContent = 'Spectrum Analysis Complete';
+                setTimeout(() => {
+                    button.textContent = 'Show Spectrum';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animatePhotonEnergy(button) {
+            const card = button.closest('.model-card');
+            const energyBars = card.querySelectorAll('.energy-bar');
+            
+            button.textContent = 'Calculating Energies...';
+            button.disabled = true;
+            
+            energyBars.forEach((bar, index) => {
+                bar.style.animation = 'none';
+                setTimeout(() => {
+                    bar.style.animation = `pulse 1.5s ease-in-out infinite`;
+                    bar.style.animationDelay = `${index * 0.3}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Calculation Complete';
+                setTimeout(() => {
+                    button.textContent = 'Calculate Energy';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateInteraction(button) {
+            const card = button.closest('.model-card');
+            const lightElements = card.querySelectorAll('.incident-light, .reflected-light, .transmitted-light, .absorbed-light');
+            
+            button.textContent = 'Demonstrating Interactions...';
+            button.disabled = true;
+            
+            lightElements.forEach((element, index) => {
+                element.style.animation = 'none';
+                setTimeout(() => {
+                    element.style.animation = `light-pulse 2s ease-in-out infinite`;
+                    element.style.animationDelay = `${index * 0.5}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Interactions Complete';
+                setTimeout(() => {
+                    button.textContent = 'Show Interactions';
+                    button.disabled = false;
+                }, 1500);
+            }, 4000);
+        }
+
+        function animatePolarization(button) {
+            const card = button.closest('.model-card');
+            const electronCloud = card.querySelector('.electron-cloud');
+            
+            button.textContent = 'Polarizing Electrons...';
+            button.disabled = true;
+            
+            electronCloud.style.animation = 'none';
+            setTimeout(() => {
+                electronCloud.style.animation = 'cloud-oscillation 1s ease-in-out infinite';
+            }, 100);
+            
+            setTimeout(() => {
+                button.textContent = 'Polarization Complete';
+                setTimeout(() => {
+                    button.textContent = 'Electronic Polarization';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateMetalElectrons(button) {
+            const card = button.closest('.model-card');
+            const electrons = card.querySelectorAll('.free-electron');
+            const wave = card.querySelector('.electromagnetic-wave');
+            
+            button.textContent = 'Oscillating Electrons...';
+            button.disabled = true;
+            
+            electrons.forEach((electron, index) => {
+                electron.style.animation = 'none';
+                setTimeout(() => {
+                    electron.style.animation = `electron-oscillation 1s ease-in-out infinite`;
+                    electron.style.animationDelay = `${index * 0.2}s`;
+                }, 100);
+            });
+            
+            if (wave) {
+                wave.style.animation = 'none';
+                setTimeout(() => {
+                    wave.style.animation = 'wave-propagation 2s linear infinite';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'Oscillation Complete';
+                setTimeout(() => {
+                    button.textContent = 'Electron Oscillation';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
         function animateRefraction(button) {
             const card = button.closest('.model-card');
             const rays = card.querySelectorAll('.light-ray');
@@ -872,6 +2311,290 @@
                 button.textContent = 'Refraction Complete';
                 setTimeout(() => {
                     button.textContent = 'Demonstrate Refraction';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateDispersion(button) {
+            const card = button.closest('.model-card');
+            const whiteLight = card.querySelector('.white-light');
+            const dispersedLights = card.querySelectorAll('.dispersed-light');
+            
+            button.textContent = 'Dispersing Light...';
+            button.disabled = true;
+            
+            if (whiteLight) {
+                whiteLight.style.animation = 'none';
+                setTimeout(() => {
+                    whiteLight.style.animation = 'light-pulse 2s ease-in-out infinite';
+                }, 100);
+            }
+            
+            dispersedLights.forEach((light, index) => {
+                light.style.animation = 'none';
+                setTimeout(() => {
+                    light.style.animation = `light-pulse 2s ease-in-out infinite`;
+                    light.style.animationDelay = `${1 + index * 0.3}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Dispersion Complete';
+                setTimeout(() => {
+                    button.textContent = 'Show Dispersion';
+                    button.disabled = false;
+                }, 1500);
+            }, 4000);
+        }
+
+        function animateReflection(button) {
+            const card = button.closest('.model-card');
+            const beams = card.querySelectorAll('.incident-beam, .reflected-beam, .transmitted-beam');
+            
+            button.textContent = 'Demonstrating Reflection...';
+            button.disabled = true;
+            
+            beams.forEach((beam, index) => {
+                beam.style.animation = 'none';
+                setTimeout(() => {
+                    beam.style.animation = `light-pulse 2s ease-in-out infinite`;
+                    beam.style.animationDelay = `${index * 0.5}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Reflection Complete';
+                setTimeout(() => {
+                    button.textContent = 'Fresnel Reflection';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateTransmission(button) {
+            const card = button.closest('.model-card');
+            const incidentBeam = card.querySelector('.incident-beam-trans');
+            const transmittedBeam = card.querySelector('.transmitted-beam-trans');
+            
+            button.textContent = 'Transmitting Light...';
+            button.disabled = true;
+            
+            if (incidentBeam) {
+                incidentBeam.style.animation = 'none';
+                setTimeout(() => {
+                    incidentBeam.style.animation = 'light-pulse 2s ease-in-out infinite';
+                }, 100);
+            }
+            
+            if (transmittedBeam) {
+                transmittedBeam.style.animation = 'none';
+                setTimeout(() => {
+                    transmittedBeam.style.animation = 'light-pulse 2s ease-in-out infinite 1s';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'Transmission Complete';
+                setTimeout(() => {
+                    button.textContent = 'Light Transmission';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateColor(button) {
+            const card = button.closest('.model-card');
+            const whiteLight = card.querySelector('.white-light-source');
+            const transmittedColor = card.querySelector('.transmitted-color');
+            
+            button.textContent = 'Forming Color...';
+            button.disabled = true;
+            
+            if (whiteLight) {
+                whiteLight.style.animation = 'none';
+                setTimeout(() => {
+                    whiteLight.style.animation = 'light-pulse 2s ease-in-out infinite';
+                }, 100);
+            }
+            
+            if (transmittedColor) {
+                transmittedColor.style.animation = 'none';
+                setTimeout(() => {
+                    transmittedColor.style.animation = 'light-pulse 2s ease-in-out infinite 1.5s';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'Color Formation Complete';
+                setTimeout(() => {
+                    button.textContent = 'Color Formation';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateScattering(button) {
+            const card = button.closest('.model-card');
+            const incidentLight = card.querySelector('.incident-light-scatter');
+            const scatterRays = card.querySelectorAll('.scatter-ray');
+            
+            button.textContent = 'Scattering Light...';
+            button.disabled = true;
+            
+            if (incidentLight) {
+                incidentLight.style.animation = 'none';
+                setTimeout(() => {
+                    incidentLight.style.animation = 'light-pulse 2s ease-in-out infinite';
+                }, 100);
+            }
+            
+            scatterRays.forEach((ray, index) => {
+                ray.style.animation = 'none';
+                setTimeout(() => {
+                    ray.style.animation = `light-pulse 2s ease-in-out infinite`;
+                    ray.style.animationDelay = `${0.5 + index * 0.5}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Scattering Complete';
+                setTimeout(() => {
+                    button.textContent = 'Light Scattering';
+                    button.disabled = false;
+                }, 1500);
+            }, 4000);
+        }
+
+        function animateLED(button) {
+            const card = button.closest('.model-card');
+            const electronHolePair = card.querySelector('.electron-hole-pair');
+            const photonEmission = card.querySelector('.photon-emission');
+            
+            button.textContent = 'LED Emitting...';
+            button.disabled = true;
+            
+            if (electronHolePair) {
+                electronHolePair.style.animation = 'none';
+                setTimeout(() => {
+                    electronHolePair.style.animation = 'pulse 1.5s ease-in-out infinite';
+                }, 100);
+            }
+            
+            if (photonEmission) {
+                photonEmission.style.animation = 'none';
+                setTimeout(() => {
+                    photonEmission.style.animation = 'light-pulse 1.5s ease-in-out infinite 0.5s';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'LED Operation Complete';
+                setTimeout(() => {
+                    button.textContent = 'LED Operation';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateLaser(button) {
+            const card = button.closest('.model-card');
+            const excitedAtoms = card.querySelectorAll('.excited-atom');
+            const stimulatedPhoton = card.querySelector('.stimulated-photon');
+            const coherentBeam = card.querySelector('.coherent-beam');
+            
+            button.textContent = 'Laser Operating...';
+            button.disabled = true;
+            
+            excitedAtoms.forEach((atom, index) => {
+                atom.style.animation = 'none';
+                setTimeout(() => {
+                    atom.style.animation = `pulse 1s ease-in-out infinite`;
+                    atom.style.animationDelay = `${index * 0.3}s`;
+                }, 100);
+            });
+            
+            if (stimulatedPhoton) {
+                stimulatedPhoton.style.animation = 'none';
+                setTimeout(() => {
+                    stimulatedPhoton.style.animation = 'light-pulse 1.5s ease-in-out infinite 0.5s';
+                }, 100);
+            }
+            
+            if (coherentBeam) {
+                coherentBeam.style.animation = 'none';
+                setTimeout(() => {
+                    coherentBeam.style.animation = 'light-pulse 1.5s ease-in-out infinite 1s';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'Laser Operation Complete';
+                setTimeout(() => {
+                    button.textContent = 'Laser Operation';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateSemiconductorLaser(button) {
+            const card = button.closest('.model-card');
+            const electronInjection = card.querySelector('.electron-injection');
+            const holeInjection = card.querySelector('.hole-injection');
+            const stimulatedEmission = card.querySelector('.stimulated-emission');
+            
+            button.textContent = 'Semiconductor Lasing...';
+            button.disabled = true;
+            
+            if (electronInjection) {
+                electronInjection.style.animation = 'none';
+                setTimeout(() => {
+                    electronInjection.style.animation = 'pulse 1.5s ease-in-out infinite';
+                }, 100);
+            }
+            
+            if (holeInjection) {
+                holeInjection.style.animation = 'none';
+                setTimeout(() => {
+                    holeInjection.style.animation = 'pulse 1.5s ease-in-out infinite 0.3s';
+                }, 100);
+            }
+            
+            if (stimulatedEmission) {
+                stimulatedEmission.style.animation = 'none';
+                setTimeout(() => {
+                    stimulatedEmission.style.animation = 'light-pulse 1.5s ease-in-out infinite 0.8s';
+                }, 100);
+            }
+            
+            setTimeout(() => {
+                button.textContent = 'Semiconductor Laser Complete';
+                setTimeout(() => {
+                    button.textContent = 'Semiconductor Laser';
+                    button.disabled = false;
+                }, 1500);
+            }, 3000);
+        }
+
+        function animateCommunication(button) {
+            const card = button.closest('.model-card');
+            const channels = card.querySelectorAll('.channel');
+            
+            button.textContent = 'Transmitting Data...';
+            button.disabled = true;
+            
+            channels.forEach((channel, index) => {
+                channel.style.animation = 'none';
+                setTimeout(() => {
+                    channel.style.animation = `pulse 1.5s ease-in-out infinite`;
+                    channel.style.animationDelay = `${index * 0.2}s`;
+                }, 100);
+            });
+            
+            setTimeout(() => {
+                button.textContent = 'Communication Complete';
+                setTimeout(() => {
+                    button.textContent = 'Optical Communication';
                     button.disabled = false;
                 }, 1500);
             }, 3000);
